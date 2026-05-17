@@ -1,0 +1,11 @@
+warehouse_id,city,area,capacity,utilization_rate
+W001,Bangalore,Koramangala,5000,0.82
+W002,Delhi,Connaught Place,6000,0.91
+W003,Mumbai,Andheri,5500,0.78
+W004,Hyderabad,Banjara Hills,4500,0.85
+W005,Pune,Hinjewadi,4000,0.72
+W006,Chennai,Anna Nagar,4800,0.88
+W007,Kolkata,Salt Lake,4200,0.76
+W008,Ahmedabad,Navrangpura,3800,0.69
+W009,Bangalore,Whitefield,5200,0.83
+W010,Delhi,Rohini,5800,0.9

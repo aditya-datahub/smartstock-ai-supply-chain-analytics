@@ -1,0 +1,31 @@
+product_id,product_name,category,brand,selling_price,unit
+P001,Amul Milk,Dairy,Amul,26,Litre
+P002,Mother Dairy Curd,Dairy,Mother Dairy,45,Kg
+P003,Amul Butter,Dairy,Amul,55,Piece
+P004,Amul Paneer,Dairy,Amul,89,Piece
+P005,Nestle Yogurt,Dairy,Nestle,35,Piece
+P006,Lays Classic,Snacks,Lays,20,Piece
+P007,Kurkure Masala,Snacks,Kurkure,20,Piece
+P008,Britannia Biscuit,Snacks,Britannia,30,Piece
+P009,Haldirams Namkeen,Snacks,Haldirams,60,Piece
+P010,Too Yumm Chips,Snacks,Too Yumm,25,Piece
+P011,Coca Cola 500ml,Beverages,Coca Cola,40,Piece
+P012,Tropicana Juice,Beverages,Tropicana,99,Piece
+P013,Red Bull,Beverages,Red Bull,125,Piece
+P014,Bisleri Water,Beverages,Bisleri,20,Piece
+P015,Nescafe Coffee,Beverages,Nescafe,299,Piece
+P016,Dove Shampoo,Personal Care,Dove,179,Piece
+P017,Colgate Toothpaste,Personal Care,Colgate,89,Piece
+P018,Dettol Soap,Personal Care,Dettol,45,Piece
+P019,Nivea Cream,Personal Care,Nivea,199,Piece
+P020,Pantene Conditioner,Personal Care,Pantene,199,Piece
+P021,Aashirvaad Atta,Staples,Aashirvaad,280,Kg
+P022,India Gate Rice,Staples,India Gate,320,Kg
+P023,Tata Salt,Staples,Tata,25,Kg
+P024,Fortune Oil,Staples,Fortune,180,Litre
+P025,Tata Dal,Staples,Tata,150,Kg
+P026,McCain Fries,Frozen Food,McCain,180,Piece
+P027,Godrej Chicken,Frozen Food,Godrej,350,Piece
+P028,Amul Ice Cream,Frozen Food,Amul,130,Piece
+P029,Haldirams Paratha,Frozen Food,Haldirams,89,Piece
+P030,Venky Nuggets,Frozen Food,Venky,220,Piece
