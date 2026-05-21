@@ -1,26 +1,42 @@
 # SmartStock AI — Supply Chain & Demand Forecasting Analytics
 
-> An end-to-end supply chain analytics solution built to identify 
-> stockout patterns, measure revenue loss, track warehouse performance, 
-> and forecast future demand using SQL, Python & Power BI.
+> An end-to-end supply chain analytics platform designed to detect stockout risks, measure revenue leakage, optimize warehouse operations, and forecast future demand using SQL, Python, Machine Learning, and Power BI.
 
 ---
 
-## Problem Statement
+## Business Problem
 
-Quick-commerce companies lose revenue every day — not because of bad 
-products, but because no one saw the stockout coming.
+In quick-commerce and retail operations, inventory issues directly impact revenue and customer experience.
 
-Without real-time inventory visibility and accurate demand forecasting, 
-businesses face:
-- Products going out of stock without warning
-- Orders getting cancelled = direct revenue loss
-- Warehouses either overstocked or understocked
-- Weekend demand spikes consistently missed
+Without accurate demand forecasting and inventory visibility, businesses often face:
 
-**SmartStock AI** solves this by building a complete supply chain 
-analytics framework across 10 warehouses, 1,00,000+ orders, and 
-6 product categories.
+- Unexpected stockouts leading to lost sales
+- High order cancellation rates
+- Overstocking and increased holding costs
+- Poor warehouse allocation
+- Missed demand spikes during peak periods
+
+**SmartStock AI** was built to solve these challenges through a complete analytics workflow covering inventory tracking, revenue analysis, warehouse performance monitoring, and demand forecasting.
+
+---
+
+## Solution Overview
+
+SmartStock AI analyzes operational data across:
+
+- 10 warehouses
+- 1,00,000+ customer orders
+- 6 product categories
+- Multi-city supply chain operations
+
+The project combines:
+
+- Advanced SQL analytics
+- Exploratory Data Analysis (EDA)
+- Demand forecasting using Prophet
+- Interactive Power BI dashboards
+
+to generate actionable business insights for supply chain optimization.
 
 ---
 
@@ -32,28 +48,30 @@ analytics framework across 10 warehouses, 1,00,000+ orders, and
 
 ## Tech Stack
 
-| Tool | Purpose |
-|------|---------|
-| PostgreSQL | Database & SQL Analytics |
-| Python | Data Generation, EDA, Forecasting |
-| Prophet | Demand Forecasting (ML) |
-| Power BI | Executive Dashboard |
-| Git/GitHub | Version Control |
+| Technology | Usage |
+|---|---|
+| PostgreSQL | Data storage & SQL analytics |
+| Python | Data generation, EDA & forecasting |
+| Pandas & NumPy | Data manipulation |
+| Prophet | Time-series demand forecasting |
+| Power BI | Interactive dashboard visualization |
+| Git & GitHub | Version control & project management |
 
 ---
 
 ## Project Structure
-```
+
+```bash
 smartstock-ai/
 │
-├── data/                          # Synthetic CSV datasets
+├── data/
 │   ├── orders.csv
 │   ├── products.csv
 │   ├── warehouses.csv
 │   ├── inventory.csv
 │   └── deliveries.csv
 │
-├── sql/                           # PostgreSQL queries
+├── sql/
 │   ├── 00_create_tables.sql
 │   ├── 01_basic_metrics.sql
 │   ├── 02_product_analysis.sql
@@ -61,101 +79,184 @@ smartstock-ai/
 │   ├── 04_warehouse_analysis.sql
 │   └── 05_advanced_analytics.sql
 │
-├── notebooks/                     # Jupyter notebooks
+├── notebooks/
 │   ├── 01_data_generation.ipynb
 │   ├── 02_eda_analysis.ipynb
 │   └── 03_forecasting.ipynb
 │
-├── dashboard/                     # Power BI dashboard
-│   └── smart_stock_dashboard.pbix
+├── dashboard/
+│   ├── smartstock_dashboard.pbix
+│   └── dashboard.png
 │
-└── images/                        # EDA visualizations
+├── images/
+│
+└── README.md
 ```
----
-
-## Dataset
-
-Synthetic dataset generated using Python (Pandas, NumPy, Faker):
-
-| Table | Rows | Description |
-|-------|------|-------------|
-| orders | 91,457 | Customer orders across 2023 |
-| products | 30 | 6 categories, real Indian brands |
-| warehouses | 10 | 8 cities across India |
-| inventory | 300 | Stock levels per warehouse |
-| deliveries | 84,104 | Delivery status & delays |
-
-> To regenerate data: Run `notebooks/01_data_generation.ipynb`
 
 ---
 
-## SQL Analytics (15 Queries)
+## Dataset Information
 
-| File | Queries | Focus |
-|------|---------|-------|
-| 01_basic_metrics | Q1-Q2 | Revenue & order summary |
-| 02_product_analysis | Q3-Q5 | Top products & stockout rate |
-| 03_revenue_stockout | Q6-Q8 | Lost revenue & monthly trends |
-| 04_warehouse_analysis | Q9-Q11 | Warehouse & delivery performance |
-| 05_advanced_analytics | Q12-Q15 | Rolling avg, MoM growth, inventory turnover |
+Synthetic datasets generated using Python, Pandas, NumPy, and Faker.
 
-**Key SQL concepts used:**
-- CTEs (WITH clause)
-- Window Functions (LAG, RANK, OVER)
+| Dataset | Records | Description |
+|---|---|---|
+| Orders | 91,457 | Customer order transactions |
+| Products | 30 | Product catalog across categories |
+| Warehouses | 10 | Warehouse locations across India |
+| Inventory | 300 | Warehouse-wise inventory levels |
+| Deliveries | 84,104 | Delivery status and delays |
+
+### Features Simulated
+
+- Seasonal demand fluctuations
+- Product stockouts
+- Delivery delays
+- Warehouse-level performance
+- Weekend vs weekday demand behavior
+
+---
+
+## SQL Analytics Performed
+
+### Core Business Analysis
+
+- Revenue and order trend analysis
+- Product-wise revenue contribution
+- Stockout impact measurement
+- Cancellation rate tracking
+- Warehouse performance benchmarking
+
+### Advanced SQL Concepts Used
+
+- CTEs (`WITH`)
+- Window Functions (`RANK`, `LAG`, `OVER`)
 - Rolling 7-day averages
-- Month-over-Month growth calculation
-- Stockout risk classification (CASE WHEN)
+- Month-over-Month growth analysis
+- Inventory turnover analysis
+- Stockout risk classification using `CASE WHEN`
 
 ---
 
 ## Key Business Insights
 
-**Revenue:**
-- Total Revenue: $16.8M across 91,457 orders
-- Lost Revenue: $1.5M due to stockouts (8.23% loss)
-- March 2023 had highest revenue spike (+14.66% MoM)
+### Revenue Insights
 
-**Products:**
-- Nescafe Coffee was the top revenue driver
-- Amul Butter had highest stockout rate (9.05%)
-- Beverages category contributed 38% of total revenue
+- Generated **$16.8M revenue** across 91K+ orders
+- Identified **$1.5M revenue loss** due to stockouts
+- March 2023 recorded highest monthly growth (**+14.66% MoM**)
 
-**Warehouses:**
-- Bangalore Koramangala — highest revenue ($17.27L)
-- Ahmedabad Navrangpura — highest cancellation rate (8.5%)
-- All warehouses showed ~15% delivery delay rate
+### Product Insights
 
-**Forecasting:**
-- Prophet model accuracy: **94.69%** (MAPE: 5.31%)
-- Frozen Food & Staples: 22% & 15% demand spike predicted for Jan 2024
-- Weekly seasonality clearly detected — weekdays higher than weekends
+- **Nescafe Coffee** emerged as the highest revenue-driving product
+- **Amul Butter** showed the highest stockout risk
+- Beverage category contributed nearly **38% of total revenue**
+
+### Warehouse Insights
+
+- Bangalore Koramangala warehouse achieved highest revenue performance
+- Ahmedabad Navrangpura recorded highest cancellation rate
+- Delivery delays averaged nearly **15%** across warehouses
+
+### Forecasting Insights
+
+- Prophet forecasting model achieved **94.69% accuracy**
+- Predicted significant Q1 demand spikes:
+  - Frozen Foods → +22%
+  - Staples → +15%
+- Weekly seasonality patterns clearly identified
 
 ---
 
-## Power BI Dashboard
+## Power BI Dashboard Features
 
-Single-page executive dashboard covering:
-- 5 KPI cards (Revenue, Lost Revenue, Orders, Delivered, Cancellation Rate)
-- Monthly Revenue Trend (Line Chart)
-- Category wise Revenue (Donut Chart)
-- Top 10 Products by Revenue (Bar Chart)
-- Stockout Rate by Product (Bar Chart)
-- Warehouse Performance (Table)
+Interactive executive dashboard including:
+
+- KPI Cards
+- Revenue trend analysis
+- Category-wise revenue breakdown
+- Top-performing products
+- Stockout rate monitoring
+- Warehouse performance comparison
+- Delivery and cancellation tracking
 
 ---
 
 ## Business Recommendations
 
-1. **Frozen Food & Staples** — increase stock by 20-25% for Q1 2024
-2. **Ahmedabad warehouse** — review replenishment schedule (8.5% cancellation)
-3. **Friday restocking** — weekend demand drops, pre-stock on Fridays
-4. **Amul Butter** — highest stockout risk, prioritize replenishment
-5. **Prophet model** — retrain monthly with new data for best accuracy
+### Inventory Optimization
+
+- Increase Q1 inventory allocation for Frozen Foods and Staples
+- Prioritize replenishment for high stockout-risk products
+
+### Warehouse Operations
+
+- Improve replenishment cycle in Ahmedabad warehouse
+- Monitor cancellation-heavy regions more aggressively
+
+### Demand Planning
+
+- Implement Friday pre-restocking strategy
+- Retrain forecasting model monthly for improved accuracy
+
+---
+
+## Future Enhancements
+
+- Real-time inventory monitoring pipeline
+- Automated low-stock alert system
+- Streamlit dashboard deployment
+- XGBoost/LSTM forecasting comparison
+- Cloud deployment using AWS or Azure
+
+---
+
+## How to Run the Project
+
+### 1. Clone Repository
+
+```bash
+git clone https://github.com/aditya-datahub/smartstock-ai.git
+```
+
+### 2. Install Dependencies
+
+```bash
+pip install pandas numpy matplotlib seaborn prophet faker psycopg2
+```
+
+### 3. Run Data Generation Notebook
+
+```bash
+notebooks/01_data_generation.ipynb
+```
+
+### 4. Execute SQL Queries
+
+Run SQL scripts inside PostgreSQL in sequence:
+
+```bash
+00_create_tables.sql
+01_basic_metrics.sql
+02_product_analysis.sql
+03_revenue_stockout.sql
+04_warehouse_analysis.sql
+05_advanced_analytics.sql
+```
+
+### 5. Open Power BI Dashboard
+
+```bash
+dashboard/smartstock_dashboard.pbix
+```
 
 ---
 
 ## Author
 
-**Aditya Sharma**  
-B.Tech Computer Science | Data Analytics Enthusiast  
-[LinkedIn](https://linkedin.com/in/your-profile) | [GitHub](https://github.com/aditya-datahub)
+### Aditya Sharma
+
+B.Tech Computer Science | Aspiring Data Analyst
+
+- LinkedIn: https://linkedin.com/in/your-profile
+- GitHub: https://github.com/aditya-datahub
