@@ -256,7 +256,7 @@ dashboard/smartstock_dashboard.pbix
 
 ### Aditya Sharma
 
-B.Tech Computer Science | Aspiring Data Analyst
+B.Tech Computer Science | Data Analyst
 
 - LinkedIn: https://linkedin.com/in/your-profile
 - GitHub: https://github.com/aditya-datahub
