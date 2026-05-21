@@ -24,6 +24,12 @@ analytics framework across 10 warehouses, 1,00,000+ orders, and
 
 ---
 
+## Dashboard Preview
+
+![SmartStock AI Dashboard](dashboard/dashboard.png)
+
+---
+
 ## Tech Stack
 
 | Tool | Purpose |
